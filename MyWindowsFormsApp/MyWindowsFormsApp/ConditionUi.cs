@@ -10,20 +10,24 @@ using System.Windows.Forms;
 
 namespace MyWindowsFormsApp
 {
-    public partial class Home : Form
+    public partial class ConditionUi : Form
     {
-        public Home()
+        public ConditionUi()
         {
             InitializeComponent();
         }
 
         private void showButton_Click(object sender, EventArgs e)
         {
+            if (itemComboBox.Text == "")
+            {
+                MessageBox.Show("Please select item");
+            }
+            else
+            {
+                MessageBox.Show( itemComboBox.Text + " is selected");
+            }
 
-            MessageBox.Show("Hello " + nameTextBox.Text);
-            showLabel.Text = nameTextBox.Text;
         }
-
-       
     }
 }

@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConditionUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConditionUi.Designer.cs">
+      <DependentUpon>ConditionUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataTypeUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataTypeUi.Designer.cs">
+      <DependentUpon>DataTypeUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConditionUi.resx">
+      <DependentUpon>ConditionUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataTypeUi.resx">
+      <DependentUpon>DataTypeUi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
