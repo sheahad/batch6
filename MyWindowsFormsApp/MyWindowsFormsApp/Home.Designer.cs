@@ -32,6 +32,8 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.showButton = new System.Windows.Forms.Button();
             this.showLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ageTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +54,7 @@
             // 
             // showButton
             // 
-            this.showButton.Location = new System.Drawing.Point(274, 55);
+            this.showButton.Location = new System.Drawing.Point(274, 114);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(75, 23);
             this.showButton.TabIndex = 2;
@@ -68,6 +70,22 @@
             this.showLabel.Size = new System.Drawing.Size(0, 13);
             this.showLabel.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Age";
+            // 
+            // ageTextBox
+            // 
+            this.ageTextBox.Location = new System.Drawing.Point(122, 82);
+            this.ageTextBox.Name = "ageTextBox";
+            this.ageTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ageTextBox.TabIndex = 1;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -75,6 +93,8 @@
             this.ClientSize = new System.Drawing.Size(430, 345);
             this.Controls.Add(this.showLabel);
             this.Controls.Add(this.showButton);
+            this.Controls.Add(this.ageTextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label1);
             this.Name = "Home";
@@ -90,6 +110,8 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Button showButton;
         private System.Windows.Forms.Label showLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox ageTextBox;
     }
 }
 
