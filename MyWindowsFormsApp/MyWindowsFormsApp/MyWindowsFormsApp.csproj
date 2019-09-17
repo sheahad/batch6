@@ -72,9 +72,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="ArrayUi.resx">
       <DependentUpon>ArrayUi.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <Compile Include="User1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User1.Designer.cs">
+      <DependentUpon>User1.cs</DependentUpon>
+    </Compile>
+>>>>>>> c33ed7f4544d739afa071d74d712c44447934470
     <EmbeddedResource Include="ConditionUi.resx">
       <DependentUpon>ConditionUi.cs</DependentUpon>
     </EmbeddedResource>
