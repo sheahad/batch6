@@ -19,7 +19,7 @@ namespace MyWindowsFormsApp
 
             //Application.Run(new Home());
             //Application.Run(new DataTypeUi());
-            Application.Run(new ArrayUi());
+            Application.Run(new ListUi());
         }
     }
 }
