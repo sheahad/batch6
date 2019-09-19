@@ -22,19 +22,27 @@ namespace MyWindowsFormsApp
         private void addButton_Click(object sender, EventArgs e)
         {
             //names.Add(nameTextBox.Text);
-            if (String.IsNullOrEmpty(ageTextBox.Text))
-            {
-                MessageBox.Show("Please enter Age!");
-                return;
-            }
-            else
-            {
-                
-                AddCustomer(nameTextBox.Text, Convert.ToInt32(ageTextBox.Text));
-            }
-            
+
+
             //
 
+            try {
+                if (String.IsNullOrEmpty(ageTextBox.Text))
+                {
+                    MessageBox.Show("Please enter Age!");
+                    return;
+                }
+                else
+                {
+                    AddCustomer(nameTextBox.Text, Convert.ToInt32(ageTextBox.Text));
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
+            
             ShowCustomer();
         }
 
