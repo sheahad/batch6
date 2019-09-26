@@ -70,6 +70,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemUi.Designer.cs">
+      <DependentUpon>ItemUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListUi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemUi.resx">
+      <DependentUpon>ItemUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListUi.resx">
       <DependentUpon>ListUi.cs</DependentUpon>
