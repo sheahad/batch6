@@ -2,7 +2,6 @@ CREATE DATABASE CoffeeShop
 USE CoffeeShop
 
 CREATE TABLE Items(
-
 ID INT IDENTITY(1,1),
 Name VARCHAR(50),
 Price FLOAT
