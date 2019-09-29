@@ -108,6 +108,7 @@ namespace MyWindowsFormsApp
             Search(nameTextBox.Text);
         }
 
+        //Method
         private bool Add(string name, double price)
         {
             bool isAdded = false;
@@ -232,7 +233,6 @@ namespace MyWindowsFormsApp
                 MessageBox.Show(exeption.Message);
             }
         }
-
         private bool Delete(int id)
         {
             try
@@ -268,7 +268,6 @@ namespace MyWindowsFormsApp
 
             return false;
         }
-
         private bool Update(string name, double price, int id)
         {
             try
@@ -302,7 +301,6 @@ namespace MyWindowsFormsApp
             }
             return false;
         }
-
         private void Search(string name)
         {
             try
