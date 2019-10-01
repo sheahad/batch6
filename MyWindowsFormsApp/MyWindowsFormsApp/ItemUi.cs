@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
+
+
 
 using System.Drawing;
 using System.Linq;
@@ -10,12 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyWindowsFormsApp.BLL;
-
+using MyWindowsFormsApp.Model;
 namespace MyWindowsFormsApp
 {
     public partial class ItemUi : Form
     {
         ItemManager _itemManager = new ItemManager();
+        Item _item = new Item();
         public ItemUi()
         {
             InitializeComponent();
@@ -23,34 +24,43 @@ namespace MyWindowsFormsApp
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            //Check UNIQUE
-            if (_itemManager.IsNameExists(nameTextBox.Text))
-            {
-                MessageBox.Show(nameTextBox.Text + "Already Exists!");
-                return;
-            }
+            //_item.Name = nameTextBox.Text;
+            
+            ////Check UNIQUE
+            //if (_itemManager.IsNameExists(_item.Name))
+            //{
+            //    MessageBox.Show(nameTextBox.Text + "Already Exists!");
+            //    return;
+            //}
 
-            //Set Price as Mandatory
-            if (String.IsNullOrEmpty(priceTextBox.Text))            
-            {
-                MessageBox.Show("Price Can not be Empty!!!");
-                return;
-            }
+            ////Set Price as Mandatory
+            //if (String.IsNullOrEmpty(priceTextBox.Text))            
+            //{
+            //    MessageBox.Show("Price Can not be Empty!!!");
+            //    return;
+            //}
 
-            //Add/Insert Item
-            bool isAdded = _itemManager.Add(nameTextBox.Text, Convert.ToDouble(priceTextBox.Text));
+            //_item.Price = Convert.ToDouble(priceTextBox.Text);
+            ////Add/Insert Item
+            ////bool isAdded = _itemManager.Add(_item.Name, _item.Price);
+            //bool isAdded = _itemManager.Add(_item);
+            
+            //if (isAdded)
+            //{
 
-            if (isAdded)
-            {
-                MessageBox.Show("Saved");
-            }
-            else
-            {
-                MessageBox.Show("Not Saved");
-            }
+            //    MessageBox.Show("Saved");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Not Saved");
+            //}
 
-            //showDataGridView.DataSource = dataTable;
-            showDataGridView.DataSource = _itemManager.Display();
+            ////showDataGridView.DataSource = dataTable;
+            //showDataGridView.DataSource = _itemManager.Display();
+
+            ////
+
+            MessageBox.Show("Name: " + itemComboBox.Text + " Id: "+ itemComboBox.SelectedValue);
         }
 
         private void showButton_Click(object sender, EventArgs e)
@@ -69,7 +79,7 @@ namespace MyWindowsFormsApp
             }
 
             //Delete
-            if (Delete(Convert.ToInt32(idtextBox.Text)))
+            if (_itemManager.Delete(Convert.ToInt32(idtextBox.Text)))
             {
                 MessageBox.Show("Deleted");
             }
@@ -110,85 +120,15 @@ namespace MyWindowsFormsApp
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            Search(nameTextBox.Text);
+            //showDataGridView.DataSource = dataTable;
+            showDataGridView.DataSource =_itemManager.Search(nameTextBox.Text);
         }
 
-        //Method
-       
-       
-        private bool Delete(int id)
+        private void ItemUi_Load(object sender, EventArgs e)
         {
-            try
-            {
-                //Connection
-                string connectionString = @"Server=BITM-TRAINER-30\SQLEXPRESS; Database=CoffeeShop; Integrated Security=True";
-                SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-                //Command 
-                //DELETE FROM Items WHERE ID = 3
-                string commandString = @"DELETE FROM Items WHERE ID = " + id + "";
-                SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
-
-                //Open
-                sqlConnection.Open();
-
-                //Delete
-                int isExecuted = sqlCommand.ExecuteNonQuery();
-                if (isExecuted > 0)
-                {
-                    return true;
-                }
-                
-
-                //Close
-                sqlConnection.Close();
-
-            }
-            catch (Exception exeption)
-            {
-                MessageBox.Show(exeption.Message);
-            }
-
-            return false;
+            itemComboBox.DataSource = _itemManager.ItemCombo();
         }
+
         
-        private void Search(string name)
-        {
-            try
-            {
-                //Connection
-                string connectionString = @"Server=BITM-TRAINER-30\SQLEXPRESS; Database=CoffeeShop; Integrated Security=True";
-                SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-                //Command 
-                //INSERT INTO Items (Name, Price) Values ('Black', 120)
-                string commandString = @"SELECT * FROM Items WHERE Name='" + name + "'";
-                SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
-
-                //Open
-                sqlConnection.Open();
-
-                //Show
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-                if (dataTable.Rows.Count > 0)
-                {
-                    showDataGridView.DataSource = dataTable;
-                }
-                else
-                {
-                    MessageBox.Show("No Data Found");
-                }
-
-                //Close
-                sqlConnection.Close();
-
-            }
-            catch (Exception exeption)
-            {
-                MessageBox.Show(exeption.Message);
-            }
-        }
     }
 }

@@ -5,15 +5,16 @@ using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using MyWindowsFormsApp.Repository;
+using MyWindowsFormsApp.Model;
 
 namespace MyWindowsFormsApp.BLL
 {
     public class ItemManager
     {
         ItemRepository _itemRepository = new ItemRepository();
-        public bool Add(string name, double price)
+        public bool Add(Item item)
         {
-            return _itemRepository.Add(name, price);
+            return _itemRepository.Add(item);
         }
         public bool IsNameExists(string name)
         {
@@ -26,6 +27,18 @@ namespace MyWindowsFormsApp.BLL
         public DataTable Display()
         {
             return _itemRepository.Display();
+        }
+        public bool Delete(int id) {
+            return _itemRepository.Delete(id);
+        }
+        public DataTable Search(string name)
+        {
+            return _itemRepository.Search(name);
+        }
+
+        public DataTable ItemCombo()
+        {
+            return _itemRepository.ItemCombo();
         }
     }
 }

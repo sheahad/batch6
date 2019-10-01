@@ -83,6 +83,7 @@
     <Compile Include="ListUi.Designer.cs">
       <DependentUpon>ListUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ItemRepository.cs" />
@@ -113,6 +114,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\MyWindowsFormsApp.Model.Item.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

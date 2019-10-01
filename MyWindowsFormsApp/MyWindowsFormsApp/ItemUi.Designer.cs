@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -40,7 +41,10 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
+            this.itemComboBox = new System.Windows.Forms.ComboBox();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -149,11 +153,27 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
+            // itemComboBox
+            // 
+            this.itemComboBox.DataSource = this.itemBindingSource;
+            this.itemComboBox.DisplayMember = "Name";
+            this.itemComboBox.FormattingEnabled = true;
+            this.itemComboBox.Location = new System.Drawing.Point(111, 160);
+            this.itemComboBox.Name = "itemComboBox";
+            this.itemComboBox.Size = new System.Drawing.Size(121, 21);
+            this.itemComboBox.TabIndex = 8;
+            this.itemComboBox.ValueMember = "Id";
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(MyWindowsFormsApp.Model.Item);
+            // 
             // ItemUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 260);
+            this.Controls.Add(this.itemComboBox);
             this.Controls.Add(this.showDataGridView);
             this.Controls.Add(this.showButton);
             this.Controls.Add(this.searchButton);
@@ -168,7 +188,9 @@
             this.Controls.Add(this.label1);
             this.Name = "ItemUi";
             this.Text = "Item Information";
+            this.Load += new System.EventHandler(this.ItemUi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +210,7 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.ComboBox itemComboBox;
+        private System.Windows.Forms.BindingSource itemBindingSource;
     }
 }
