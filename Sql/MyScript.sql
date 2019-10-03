@@ -72,25 +72,47 @@ Quantity INT,
 TotalPrice FLOAT,
 )
 
+
+CREATE TABLE Orders
+(
+Id INT IDENTITY(1,1) PRIMARY KEY,
+CustomerId INT,
+ItemId INT ,
+Quantity INT,
+TotalPrice FLOAT,
+)
+
 --DROP TABLE Orders
 INSERT INTO Orders VALUES (1, 1 , 5, 600)
 INSERT INTO Orders VALUES (1, 2 , 3, 240)
 INSERT INTO Orders VALUES (1, 3 , 2, 200)
+INSERT INTO Orders VALUES (1, 5 , 2, 200)--
 
 INSERT INTO Orders VALUES (2, 2 , 2, 160)
 INSERT INTO Orders VALUES (2, 3 , 3, 300)
 INSERT INTO Orders VALUES (2, 4 , 4, 400)
+INSERT INTO Orders VALUES (2, 5 , 4, 400)--
 
-INSERT INTO Orders VALUES (4, 3 , 2, 200)
-INSERT INTO Orders VALUES (3, 4 , 2, 200)
+INSERT INTO Orders VALUES (4, 3 , 2, 200)--
+INSERT INTO Orders VALUES (4, 4 , 2, 200)--
+
+INSERT INTO Orders VALUES (5, 5 , 2, 200)
+INSERT INTO Orders VALUES (5, 5 , 2, 200)
 
 DELETE FROM Customers WHERE ID =3
 SELECT * FROM Items
 SELECT * FROM Customers
 SELECT * FROM Orders
 
+CREATE VIEW OrderDetailsView
+AS
 SELECT o.Id, CustomerId, c.Name AS Customer, ItemId, i.Name AS Item, Quantity, TotalPrice FROM Orders As o
 LEFT JOIN Customers as c ON c.Id = o.CustomerId 
 LEFT JOIN Items as i ON i.ID = o.ItemId
 
+SELECT * FROM OrderDetailsView
+
 DELETE FROM Orders WHERE ID =9
+
+SELECT o.Id, CustomerId, c.Name AS Customer,  Quantity, TotalPrice FROM Orders As o
+FULL JOIN Customers as c ON c.Id = o.CustomerId 

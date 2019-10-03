@@ -31,7 +31,7 @@ namespace MyWindowsFormsApp.BLL
         public bool Delete(int id) {
             return _itemRepository.Delete(id);
         }
-        public DataTable Search(string name)
+        public List<Item> Search(string name)
         {
             return _itemRepository.Search(name);
         }

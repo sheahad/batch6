@@ -7,6 +7,7 @@ using MyWindowsFormsApp.Model;
 
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MyWindowsFormsApp.Repository
 {
@@ -207,9 +208,10 @@ namespace MyWindowsFormsApp.Repository
 
             return false;
         }
-        public DataTable Search(string name)
+        public List<Item> Search(string name)
         {
-            DataTable dataTable = new DataTable();
+            //DataTable dataTable = new DataTable();
+            List<Item> items = new List<Item>();
             try
             {
                 //Connection
@@ -219,16 +221,28 @@ namespace MyWindowsFormsApp.Repository
                 //Command 
                 //INSERT INTO Items (Name, Price) Values ('Black', 120)
                 string commandString = @"SELECT * FROM Items WHERE Name='" + name + "'";
+                //string commandString = @"SELECT * FROM Items";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 //Open
                 sqlConnection.Open();
 
                 //Show
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            //    DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-                
+                //Using DataAdapter
+                //SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                ////    DataTable dataTable = new DataTable();
+                //sqlDataAdapter.Fill(dataTable);
+
+                //Using DataReader
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Item item = new Item();
+                    item.Id = Convert.ToInt32(sqlDataReader["Id"]);
+                    item.Name = sqlDataReader["Name"].ToString();
+                    item.Price = Convert.ToDouble(sqlDataReader["Price"]);
+                    items.Add(item);
+                }
 
                 //Close
                 sqlConnection.Close();
@@ -239,7 +253,8 @@ namespace MyWindowsFormsApp.Repository
                 //MessageBox.Show(exeption.Message);
             }
 
-            return dataTable;
+            //return dataTable;
+            return items;
         }
 
         public DataTable ItemCombo()
