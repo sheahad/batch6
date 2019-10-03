@@ -35,7 +35,6 @@
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
             this.showButton = new System.Windows.Forms.Button();
-            this.showDataGridView = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.idtextBox = new System.Windows.Forms.TextBox();
             this.deleteButton = new System.Windows.Forms.Button();
@@ -43,11 +42,13 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.itemComboBox = new System.Windows.Forms.ComboBox();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.showDataGridView = new System.Windows.Forms.DataGridView();
+            this.Sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,20 +102,6 @@
             this.showButton.Text = "Show";
             this.showButton.UseVisualStyleBackColor = true;
             this.showButton.Click += new System.EventHandler(this.showButton_Click);
-            // 
-            // showDataGridView
-            // 
-            this.showDataGridView.AutoGenerateColumns = false;
-            this.showDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.showDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
-            this.showDataGridView.DataSource = this.itemBindingSource;
-            this.showDataGridView.Location = new System.Drawing.Point(255, 52);
-            this.showDataGridView.Name = "showDataGridView";
-            this.showDataGridView.Size = new System.Drawing.Size(413, 150);
-            this.showDataGridView.TabIndex = 4;
             // 
             // label3
             // 
@@ -177,11 +164,33 @@
             // 
             this.itemBindingSource.DataSource = typeof(MyWindowsFormsApp.Model.Item);
             // 
+            // showDataGridView
+            // 
+            this.showDataGridView.AutoGenerateColumns = false;
+            this.showDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sl,
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.showDataGridView.DataSource = this.itemBindingSource;
+            this.showDataGridView.Location = new System.Drawing.Point(262, 31);
+            this.showDataGridView.Name = "showDataGridView";
+            this.showDataGridView.Size = new System.Drawing.Size(457, 150);
+            this.showDataGridView.TabIndex = 9;
+            // 
+            // Sl
+            // 
+            this.Sl.HeaderText = "Sl";
+            this.Sl.Name = "Sl";
+            this.Sl.ReadOnly = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -200,8 +209,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 260);
-            this.Controls.Add(this.itemComboBox);
             this.Controls.Add(this.showDataGridView);
+            this.Controls.Add(this.itemComboBox);
             this.Controls.Add(this.showButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.updateButton);
@@ -216,8 +225,8 @@
             this.Name = "ItemUi";
             this.Text = "Item Information";
             this.Load += new System.EventHandler(this.ItemUi_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,7 +240,6 @@
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button showButton;
-        private System.Windows.Forms.DataGridView showDataGridView;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox idtextBox;
         private System.Windows.Forms.Button deleteButton;
@@ -239,6 +247,8 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ComboBox itemComboBox;
         private System.Windows.Forms.BindingSource itemBindingSource;
+        private System.Windows.Forms.DataGridView showDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sl;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
