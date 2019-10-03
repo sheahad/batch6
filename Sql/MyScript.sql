@@ -116,3 +116,5 @@ DELETE FROM Orders WHERE ID =9
 
 SELECT o.Id, CustomerId, c.Name AS Customer,  Quantity, TotalPrice FROM Orders As o
 FULL JOIN Customers as c ON c.Id = o.CustomerId 
+SELECT o.Id, CustomerId, c.Name AS Customer,  Quantity, TotalPrice FROM Orders As o
+FULL JOIN Customers as c ON c.Id = o.CustomerId 
