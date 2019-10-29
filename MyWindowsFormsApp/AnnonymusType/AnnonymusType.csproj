@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2033FA03-8446-4F4B-8AB9-E5BE9358D8B6}</ProjectGuid>
+    <ProjectGuid>{8FD0A5EB-496A-4D1B-A755-36E9B14DA727}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ObjectInitializationApp</RootNamespace>
-    <AssemblyName>ObjectInitializationApp</AssemblyName>
+    <RootNamespace>AnnonymusType</RootNamespace>
+    <AssemblyName>AnnonymusType</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

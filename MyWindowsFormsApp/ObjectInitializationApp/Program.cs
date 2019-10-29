@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MyWindowsFormsApp.Model.Model;
 namespace ObjectInitializationApp
 {
     class Program
@@ -34,7 +34,19 @@ namespace ObjectInitializationApp
             };
             Console.WriteLine("Id: " + employee3.Id + " Name: " + employee3.Name + " Address: " + employee3.Address);
 
+            List<Employee> employees = new List<Employee>()
+            {
+                //new Employee(){Id = 1,Name = "Ali",Address = "Mirpur"}
+                employee, //employees.Add(employee);
+                new Employee() {Id = 2,Name = "Hasan",Address = "Mirpur"}
 
+            };
+
+            foreach (Employee emp in employees)
+            {
+                Console.WriteLine("Id: " + emp.Id + " Name: " + emp.Name + " Address: " + emp.Address);
+            }
+            
             Console.ReadKey();
         }
     }

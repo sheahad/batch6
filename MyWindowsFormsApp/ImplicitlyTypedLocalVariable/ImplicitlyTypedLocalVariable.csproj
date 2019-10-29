@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2033FA03-8446-4F4B-8AB9-E5BE9358D8B6}</ProjectGuid>
+    <ProjectGuid>{AAB98EB5-4958-477E-8252-8793BAA96C1E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ObjectInitializationApp</RootNamespace>
-    <AssemblyName>ObjectInitializationApp</AssemblyName>
+    <RootNamespace>ImplicitlyTypedLocalVariable</RootNamespace>
+    <AssemblyName>ImplicitlyTypedLocalVariable</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
