@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using MyWindowsFormsApp.Model.Model;
+using MyWindowsFormsApp.BLL.BLL;
 
 
 

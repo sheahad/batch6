@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,7 +53,6 @@
     <Compile Include="ArrayUi.Designer.cs">
       <DependentUpon>ArrayUi.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\ItemManager.cs" />
     <Compile Include="ConditionUi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,16 +77,20 @@
     <Compile Include="ItemUi.Designer.cs">
       <DependentUpon>ItemUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="LINQUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LINQUi.Designer.cs">
+      <DependentUpon>LINQUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListUi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListUi.Designer.cs">
       <DependentUpon>ListUi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\ItemRepository.cs" />
     <EmbeddedResource Include="ArrayUi.resx">
       <DependentUpon>ArrayUi.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemUi.resx">
       <DependentUpon>ItemUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LINQUi.resx">
+      <DependentUpon>LINQUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListUi.resx">
       <DependentUpon>ListUi.cs</DependentUpon>
@@ -128,6 +135,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MyWindowsFormsApp.BLL\MyWindowsFormsApp.BLL.csproj">
+      <Project>{da17ada0-2c26-439a-b889-aa18f5f18d90}</Project>
+      <Name>MyWindowsFormsApp.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyWindowsFormsApp.Model\MyWindowsFormsApp.Model.csproj">
+      <Project>{897c0740-803a-4259-944b-2643f19c1c38}</Project>
+      <Name>MyWindowsFormsApp.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

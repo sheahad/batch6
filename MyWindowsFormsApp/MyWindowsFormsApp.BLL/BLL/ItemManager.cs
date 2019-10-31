@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Data;
 using System.Text;
 using System.Threading.Tasks;
-using MyWindowsFormsApp.Repository;
-using MyWindowsFormsApp.Model;
 using MyWindowsFormsApp.Model.Model;
+using  MyWindowsFormsApp.Repository.Repository;
+using  System.Data;
 
-namespace MyWindowsFormsApp.BLL
+namespace MyWindowsFormsApp.BLL.BLL
 {
     public class ItemManager
     {
@@ -29,7 +28,8 @@ namespace MyWindowsFormsApp.BLL
         {
             return _itemRepository.Display();
         }
-        public bool Delete(int id) {
+        public bool Delete(int id)
+        {
             return _itemRepository.Delete(id);
         }
         public List<Item> Search(string name)

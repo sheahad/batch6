@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Data;
-using System.Data.SqlClient;
-using MyWindowsFormsApp.Model;
-using System.Configuration;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 using MyWindowsFormsApp.Model.Model;
+using System.Configuration;
 
-namespace MyWindowsFormsApp.Repository
+namespace MyWindowsFormsApp.Repository.Repository
 {
     public class ItemRepository
     {
@@ -23,8 +21,8 @@ namespace MyWindowsFormsApp.Repository
         public bool Add(Item item)
         {
             bool isAdded = false;
-            
-            
+
+
             try
             {
                 //Connection
@@ -33,7 +31,7 @@ namespace MyWindowsFormsApp.Repository
 
                 //Command 
                 //INSERT INTO Items (Name, Price) Values ('Black', 120)
-                string commandString = @"INSERT INTO Items (Name, Price) Values ('" +item.Name + "', " + item.Price + ")";
+                string commandString = @"INSERT INTO Items (Name, Price) Values ('" + item.Name + "', " + item.Price + ")";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
                 //Open
@@ -144,42 +142,42 @@ namespace MyWindowsFormsApp.Repository
         }
         public DataTable Display()
         {
-           
-                //Connection
-                //string connectionString = @"Server=BITM-TRAINER-30\SQLEXPRESS; Database=CoffeeShop; Integrated Security=True";
-                //SqlConnection sqlConnection = new SqlConnection(connectionString);
 
-                //Command 
-                //INSERT INTO Items (Name, Price) Values ('Black', 120)
-                string commandString = @"SELECT * FROM Items";
-                SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
+            //Connection
+            //string connectionString = @"Server=BITM-TRAINER-30\SQLEXPRESS; Database=CoffeeShop; Integrated Security=True";
+            //SqlConnection sqlConnection = new SqlConnection(connectionString);
 
-                //Open
-                sqlConnection.Open();
+            //Command 
+            //INSERT INTO Items (Name, Price) Values ('Black', 120)
+            string commandString = @"SELECT * FROM Items";
+            SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
-                //Show
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-                
+            //Open
+            sqlConnection.Open();
 
-                //if (dataTable.Rows.Count > 0)
-                //{
-                //    return dataTable;
-                //    //showDataGridView.DataSource = dataTable;
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No Data Found");
-                //}
+            //Show
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
 
-                //Close
-                sqlConnection.Close();
-                return dataTable;
 
-            
-            
-          
+            //if (dataTable.Rows.Count > 0)
+            //{
+            //    return dataTable;
+            //    //showDataGridView.DataSource = dataTable;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No Data Found");
+            //}
+
+            //Close
+            sqlConnection.Close();
+            return dataTable;
+
+
+
+
         }
         public bool Delete(int id)
         {

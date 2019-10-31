@@ -19,7 +19,8 @@ namespace MyWindowsFormsApp
 
             //Application.Run(new Home());
             //Application.Run(new DataTypeUi());
-            Application.Run(new ItemUi());
+            //Application.Run(new ItemUi());
+            Application.Run(new LINQUi());
         }
     }
 }
