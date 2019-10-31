@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MyWindowsFormsApp.Model")]
+[assembly: AssemblyTitle("AnnonymusMethod")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MyWindowsFormsApp.Model")]
+[assembly: AssemblyProduct("AnnonymusMethod")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,11 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-<<<<<<< HEAD
-[assembly: Guid("897c0740-803a-4259-944b-2643f19c1c38")]
-=======
-[assembly: Guid("d7dff91b-65ba-4053-8f27-ed86797ad2f9")]
->>>>>>> 195b74fd5da383891f3e8696b29ac8145f1b0127
+[assembly: Guid("8862061e-85af-45cb-b472-1120e74c5103")]
 
 // Version information for an assembly consists of the following four values:
 //

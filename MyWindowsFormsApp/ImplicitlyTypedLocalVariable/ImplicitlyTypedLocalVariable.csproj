@@ -4,20 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<<<<<<< HEAD
-    <ProjectGuid>{897C0740-803A-4259-944B-2643F19C1C38}</ProjectGuid>
-=======
-    <ProjectGuid>{D7DFF91B-65BA-4053-8F27-ED86797AD2F9}</ProjectGuid>
->>>>>>> 195b74fd5da383891f3e8696b29ac8145f1b0127
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyWindowsFormsApp.Model</RootNamespace>
-    <AssemblyName>MyWindowsFormsApp.Model</AssemblyName>
+    <ProjectGuid>{AAB98EB5-4958-477E-8252-8793BAA96C1E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ImplicitlyTypedLocalVariable</RootNamespace>
+    <AssemblyName>ImplicitlyTypedLocalVariable</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -27,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -45,12 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Model\Item.cs" />
-=======
-    <Compile Include="Model\Employee.cs" />
->>>>>>> 195b74fd5da383891f3e8696b29ac8145f1b0127
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyWindowsFormsApp.Model\MyWindowsFormsApp.Model.csproj">
+      <Project>{d7dff91b-65ba-4053-8f27-ed86797ad2f9}</Project>
+      <Name>MyWindowsFormsApp.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
